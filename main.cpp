@@ -8,26 +8,26 @@
 using namespace std;
 
 int main(){
+
 	//Milestone 1
 	map<string, int> airports;
 	
-	ifstream fin("routes.txt")
+	ifstream fin("routes.txt");
 	if (!fin){
-		cout << "Error: The file "routes.txt" could not be accessed." << endl;
+		cout << "Error: The file routes.txt could not be accessed." << endl;
 		return 1;
 	}
 
 	string orig;
 	string dest;
 	while (fin >> orig >> dest){
-		airports[orig] += 1;		//come back to check/test this logic
+		airports[orig] += 1;
 		airports[dest] += 1;
 	}
 
-	//print to test?
 	cout << "All airport traffic counts:" << endl;
 	for (auto it = airports.begin(); it != airports.end(); it++)
-
+		cout << it->first << ' ' << it->second << endl;
 
 }
 
