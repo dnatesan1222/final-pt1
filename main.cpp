@@ -8,7 +8,8 @@
 #include <list>
 using namespace std;
 
-
+//traffic_range() prints the airports with traffic counts within the specified range
+//arguments: map<string, int> - data structure holding airports and their traffic, 2 ints - for the specified range
 void traffic_range(map<string, int>, int, int);
 
 int main(){
@@ -63,4 +64,3 @@ void traffic_range(map<string, int> airports, int low, int high){
 	}
 	cout << endl;
 }
-
