@@ -8,6 +8,9 @@
 #include <list>
 using namespace std;
 
+
+void traffic_range(map<string, int>, int, int);
+
 int main(){
 
 	//Milestone 1
@@ -29,7 +32,7 @@ int main(){
 	cout << "All airport traffic counts:" << endl;
 	for (auto it = airports.begin(); it != airports.end(); it++)
 		cout << it->first << ' ' << it->second << endl;
-
+	cout << endl;
 
 	//Milestone 2
 	list<string> busy_airports;
@@ -42,9 +45,21 @@ int main(){
 		}else if (it->second == busiest)
 			busy_airports.push_back(it->first);
 	}
-	cout << "\nBusiest airport(s) with count " << busiest << ":" << endl;
+	cout << "Busiest airport(s) with count " << busiest << ":" << endl;
 	for (auto it = busy_airports.begin(); it != busy_airports.end(); it++)
 		cout << *it << ' ' << busiest << endl;
+	cout << endl;
+	
+	//Milestone 3
+	traffic_range(airports, 5, 8);
+}
 
+void traffic_range(map<string, int> airports, int low, int high){
+	cout << "Airports with traffic in range [" << low << ", " << high << "]:" << endl;
+	for (auto it = airports.begin(); it != airports.end(); it++){
+		if (it->second >= low && it->second <= high)
+			cout << it->first << ' ' << it->second << endl;
+	}
+	cout << endl;
 }
 
