@@ -52,6 +52,7 @@ int main(){
 	
 	//Milestone 3
 	traffic_range(airports, 5, 8);
+	traffic_range(airports, 9, 12);
 }
 
 void traffic_range(map<string, int> airports, int low, int high){
