@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 #include <fstream>
+#include <list>
 using namespace std;
 
 int main(){
@@ -29,5 +30,20 @@ int main(){
 	for (auto it = airports.begin(); it != airports.end(); it++)
 		cout << it->first << ' ' << it->second << endl;
 
+
+	//Milestone 2
+	list<string> busy_airports;
+	int busiest = 0;
+	for (auto it = airports.begin(); it != airports.end(); it++){
+		if (it->second > busiest){
+			busy_airports.clear();
+			busiest = it->second;
+			busy_airports.push_back(it->first);
+		}else if (it->second == busiest)
+			busy_airports.push_back(it->first);
+	}
+	cout << "\nBusiest airport(s) with count " << busiest << ":" << endl;
+	for (auto it = busy_airports.begin(); it != busy_airports.end(); it++)
+		cout << *it << ' ' << busiest << endl;
 }
 
